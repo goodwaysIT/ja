@@ -1,0 +1,62 @@
+# Site settings
+title: Goodways ITチーム # Goodways IT Team
+description: >-
+  OracleデータベースとGoldenGateソリューションの専門家 
+baseurl: "/ja" # the subpath of your site, e.g. /blog
+url: "https://goodwaysit.github.io/" # the base hostname & protocol
+# future_url: "http://it.goodways.co.jp/" # Future URL for the site
+
+# Company information
+company:
+  name: Goodways ITチーム # Goodways IT Team
+  description: OracleデータベースとGoldenGateソリューションの専門家 # Specialists in Oracle Database and GoldenGate solutions
+  expertise:
+    - Oracleデータベースコンサルティング # Oracle Database Consulting
+    - Oracle GoldenGateの実装 # Oracle GoldenGate Implementation
+    - Oracle RAC & Exadataソリューション # Oracle RAC & Exadata Solutions
+    - 高可用性ソリューション # High Availability Solutions
+    - データベース移行 # Database Migration
+    - パフォーマンスチューニング # Performance Tuning
+    - 災害復旧計画 # Disaster Recovery Planning
+    - リアルタイムデータ統合 # Real-Time Data Integration
+
+
+# Language settings
+lang: ja
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+
+# Pagination settings
+paginate: 10
+paginate_path: "/blog/page:num/"
+
+# Collections
+collections:
+  services:
+    output: true
+    permalink: /services/:path/
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+# Exclude from processing
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - CONTRIBUTING.md

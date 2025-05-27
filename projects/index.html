@@ -1,0 +1,35 @@
+---
+layout: page
+title: プロジェクト実績
+description: 当社の専門知識を実践で示す主要プロジェクトとケーススタディをご紹介します。
+---
+
+<div class="projects-listing">
+  {% assign sorted_projects = site.projects | sort: 'order' %}
+  <div class="project-grid">
+    {% for project in sorted_projects %}
+      <div class="project-card">
+        {% if project.image %}
+        <div class="project-image">
+          <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
+        </div>
+        {% endif %}
+        <div class="project-content">
+          <h3 class="project-title">{{ project.title }}</h3>
+          <div class="project-description">{{ project.excerpt }}</div>
+          <a href="{{ project.url | relative_url }}" class="btn btn-secondary">詳しく見る</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- Placeholder for when no projects exist yet -->
+{% unless site.projects.size > 0 %}
+<div class="coming-soon">
+  <div class="container">
+    <h2>今後のプロジェクト</h2>
+    <p>当社は、Oracle DatabaseとGoldenGate技術のケーススタディを追加する作業を進めています。Check back soon to see examples of our work with Oracle Database and GoldenGate technologies.</p>
+  </div>
+</div>
+{% endunless %}
