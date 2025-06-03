@@ -4,7 +4,7 @@ title: "ORACLE 19c データベースアーキテクチャと運用管理ガイ�
 excerpt: "DB2からOracleデータベースへの製品移行に伴い、ますます多くのOracleデータベースが導入されています。Oracle 12cおよび19cデータベースは導入時期が早く、本番環境での運用期間も長いため、使用過程で多くの課題に直面してきました。Oracleデータベースの安定性を向上させ、ビジネスの健全かつ継続的な運用を確保するため、現行の製品と今後のアーキテクチャの方向性を踏まえ、以下のようなアドバイスを提供します。"
 date: 2025-06-03 11:30:00 +0800
 categories: [Oracle, データベース]
-tags: [データベースメンテナンス,データベースデプロイメント,データベース最適化,Oracle,Leo.Wang]
+tags: [データベースメンテナンス,データベースデプロイメント,データベース最適化,Oracle]
 image: /assets/images/posts/ORACLE-19C-Database-Architecture-and-Operation-and-Maintenance-Guide.jpg
 ---
 
