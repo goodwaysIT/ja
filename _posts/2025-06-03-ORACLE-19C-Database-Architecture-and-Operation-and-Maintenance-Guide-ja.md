@@ -6,7 +6,6 @@ date: 2025-06-03 11:30:00 +0800
 categories: [Oracle, データベース]
 tags: [データベースメンテナンス,データベースデプロイメント,データベース最適化,Oracle,Leo.Wang]
 image: /assets/images/posts/ORACLE-19C-Database-Architecture-and-Operation-and-Maintenance-Guide.jpg
-author: Leo.Wang
 ---
 
 ## 一、	概要  
