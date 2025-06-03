@@ -1,6 +1,3 @@
----
-layout: null
----
 {
   {% assign posts = site.posts | concat: site.services | concat: site.projects %}
   {% for post in posts %}
