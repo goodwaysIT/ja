@@ -38,6 +38,6 @@ $RECYCLE.BIN/
 .github/workflows/github-pages.yml
 
 # CNAME
-CNAME
+#CNAME
 assets/images/goodways-logo.png
 assets/images/original.png
