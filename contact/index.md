@@ -28,7 +28,7 @@ description: コンサルテーションやお問い合わせについて、私�
         </div>
         <h3 style="color: #333; margin: 0;">お電話でのお問い合わせ</h3>
       </div>
-      <p style="margin-bottom: 0.5rem; color: #555;">電話番号: +81-XX-XXXX-XXXX</p>
+      <p style="margin-bottom: 0.5rem; color: #555;">電話番号: 070 2317 9198</p>
       <p style="color: #555;">営業時間: 月曜日〜金曜日、9:00-18:00 JST</p>
     </div>
   </div>
