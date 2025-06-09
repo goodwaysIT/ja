@@ -2,7 +2,7 @@
 
 ## 概要
 
-Goodways ITテクニカルハブへようこそ！当サイトは、Goodways ITチームの公式技術ナレッジベースおよびブログです。私たちは、Oracle DatabaseおよびOracle GoldenGateソリューションに特化した技術コンサルティング会社です。私たちの使命は、Oracle技術を活用して、組織のデータインフラストラクチャの最適化、高可用性の確保、データ統合プロセスの効率化を支援することです。
+Goodways ITテクニカルハブへようこそ！当サイトは、Goodways ITチームの公式技術ナレッジベースおよびブログプラットフォームです。私たちは、Oracle Databaseお・Oracle GoldenGateソリューションに特化した技術コンサルティング会社です。私たちの使命は、Oracle技術を活用して、組織のデータインフラストラクチャの最適化、高可用性の確保、データ統合プロセスの効率化を支援することです。
 
 このプラットフォームでは、私たちの専門知識、洞察、オープンソースへの貢献、およびプロフェッショナルサービスに関する詳細を共有しています。
 
@@ -43,7 +43,7 @@ Goodways ITテクニカルハブへようこそ！当サイトは、Goodways IT�
     ```bash
     bundle install
     ```
-    このコマンドは、`Gemfile` および `Gemfile.lock` で指定されているJekyll（バージョン `3.10.0`）およびその他の必要なgemをインストールします。
+    このコマンドは、`Gemfile` と `Gemfile.lock` で指定されているJekyll（バージョン `3.10.0`）およびその他の必要なgemをインストールします。
 
 ### サイトをローカルで実行する
 
@@ -55,13 +55,13 @@ bundle exec jekyll serve
 
 デフォルトでは、サイトは `http://localhost:4000` で利用可能になります。
 
-## コンテンツコントリビューション（ブログ記事）
+## コンテンツ投稿ガイドライン
 
-私たちは知識の共有とコントリビューションを歓迎します。新しいブログ記事を追加したい場合は、以下のガイドラインに従ってください：
+私たちは知識の共有と貢献を歓迎します。新しいブログ記事を追加したい場合は、以下のガイドラインに従ってください：
 
-1.  **ディレクトリ**: 新しいMarkdownファイルを `_posts` ディレクトリに作成します。
-2.  **ファイル名形式**: ファイル名には `YYYY-MM-DD-your-post-title.md` 形式を使用します。
-    *   例: `2024-07-15-optimizing-oracle-performance.md`
+1.  **ディレクトリ**: 新しいMarkdownファイルを `_posts` ディレクトリに作成して下さい。
+2.  **ファイル名形式**: ファイル名には `YYYY-MM-DD-your-post-title.md` 形式を使用ししてください。
+    *   例: `2025-06-06-optimizing-oracle-performance.md`
 3.  **Front Matter**: 各投稿には適切なYAML Front Matterを含めるようにしてください。基本的なテンプレートは以下の通りです：
 
     ```yaml
@@ -69,7 +69,7 @@ bundle exec jekyll serve
     layout: post
     title: "魅力的な投稿タイトル"
     excerpt: "一覧ページに表示される投稿の簡単な要約またはティーザー。"
-    date: YYYY-MM-DD HH:MM:SS +ZZZZ # 例: 2024-07-15 10:00:00 +0800
+    date: YYYY-MM-DD HH:MM:SS +ZZZZ # 例: 2025-06-06 10:00:00 +0800
     categories: [関連, カテゴリー] # 例: [Oracle, GoldenGate]
     tags: [関連, タグ, 検索用] # 例: [oracle, performance, tuning]
     # image: /assets/images/posts/your-image-name.jpg # オプション: 関連画像へのパス
@@ -80,5 +80,4 @@ bundle exec jekyll serve
 
 ## お問い合わせ
 
-Goodways ITチームがどのようにお客様の組織を支援できるか、または私たちのコンテンツについてご質問がありますか？
-[お問い合わせ](https://it.goodways.co.jp/contact/) ください。
+Goodways ITチームは、OracleデータベースおよびGoldenGateに関する最適なソリューションをご提案いたします。気になることやお困りのことがあれば、お気軽に[ご連絡ください](https://it.goodways.co.jp/contact/)
