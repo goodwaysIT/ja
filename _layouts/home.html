@@ -38,7 +38,7 @@ layout: default
           <div class="post-excerpt">
             {{ post.excerpt | truncatewords: 25 }}
           </div>
-          <a href="{{ post.url | relative_url }}" class="read-more">続きを読む</a>
+          <a href="{{ post.url | relative_url }}" class="read-more" aria-label="{{ post.title }} の続きを読む">続きを読む</a>
         </div>
       {% endfor %}
     </div>

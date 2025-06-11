@@ -20,6 +20,11 @@ company:
     - 災害復旧計画 # Disaster Recovery Planning
     - リアルタイムデータ統合 # Real-Time Data Integration
 
+# Social media profiles
+social:
+  name: Goodways ITチーム
+  links:
+    - https://github.com/goodwaysIT
 
 # Language settings
 lang: ja
