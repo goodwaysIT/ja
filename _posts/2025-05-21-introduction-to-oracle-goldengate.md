@@ -8,7 +8,7 @@ tags: [データレプリケーション, リアルタイムデータ, oracle, g
 image: /assets/images/posts/goldengate-intro.jpg
 ---
 
-# Oracle GoldenGateの紹介
+# Oracle GoldenGateとは
 
 Oracle GoldenGateは、異種IT環境におけるリアルタイムデータ統合とレプリケーションのための包括的なソフトウェアパッケージです。異種システム間でのデータベーストランザクションのリアルタイムキャプチャ、変換、および配信を提供します。
 
