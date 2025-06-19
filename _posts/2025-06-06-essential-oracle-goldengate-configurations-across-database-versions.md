@@ -171,9 +171,9 @@ SHOW PARAMETER ENABLE_GOLDENGATE_REPLICATION;
 **12c/19c環境での操作**: Extractプロセスの数に基づいて設定することを推奨します。Integrated Extract プロセス1つにつき少なくとも1GBのメモリを割り当て、さらに追加の Extract プロセスごとに200MB～500MBのバッファを追加、または実際の負荷に基づいて調整するのが良いとされています。
 ```sql
 -- CDBルートで設定し、すべてのPDBに影響します (ExtractがCDBに接続する場合)
-ALTER SYSTEM SET STREAM_POOL_SIZE = 2G SCOPE=BOTH; -- 例、実際のニーズに基づいて調整
+ALTER SYSTEM SET STREAM_POOLS_SIZE = 2G SCOPE=BOTH; -- 例、実際のニーズに基づいて調整
 -- 検証
-SHOW PARAMETER STREAM_POOL_SIZE;
+SHOW PARAMETER STREAM_POOLS_SIZE;
 ```
 
 *   **`UNDO_RETENTION`**
