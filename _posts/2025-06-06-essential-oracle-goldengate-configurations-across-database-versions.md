@@ -166,14 +166,14 @@ ALTER SYSTEM SET ENABLE_GOLDENGATE_REPLICATION=TRUE SCOPE=BOTH;
 SHOW PARAMETER ENABLE_GOLDENGATE_REPLICATION;
 ```
 
-*   **`STREAM_POOL_SIZE`**
+*   **`STREAMS_POOL_SIZE`**
 ストリームプールは、OGG統合キャプチャモードのコアメモリ領域であり、LCRやメタデータなどを格納するために使用されます。適切な設定により、Extractが効率的に実行され、メモリ不足やパフォーマンスのボトルネックを回避できます。
 **12c/19c環境での操作**: Extractプロセスの数に基づいて設定することを推奨します。Integrated Extract プロセス1つにつき少なくとも1GBのメモリを割り当て、さらに追加の Extract プロセスごとに200MB～500MBのバッファを追加、または実際の負荷に基づいて調整するのが良いとされています。
 ```sql
 -- CDBルートで設定し、すべてのPDBに影響します (ExtractがCDBに接続する場合)
-ALTER SYSTEM SET STREAM_POOLS_SIZE = 2G SCOPE=BOTH; -- 例、実際のニーズに基づいて調整
+ALTER SYSTEM SET STREAMS_POOL_SIZE = 2G SCOPE=BOTH; -- 例、実際のニーズに基づいて調整
 -- 検証
-SHOW PARAMETER STREAM_POOLS_SIZE;
+SHOW PARAMETER STREAMS_POOL_SIZE;
 ```
 
 *   **`UNDO_RETENTION`**
