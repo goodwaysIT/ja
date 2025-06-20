@@ -43,7 +43,7 @@
   
   <!-- Title -->
   <text x="800" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#1e293b">
-    準リアルタイムデータプラットフォームアーキテクチャ
+    ニアリアルタイムデータプラットフォームアーキテクチャ
   </text>
   <text x="800" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#64748b">
     大手地方銀行向けデータ基盤
@@ -150,7 +150,7 @@
       Oracle GoldenGate
     </text>
     <text x="120" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fef3c7">
-      準リアルタイムデータ統合
+      ニアリアルタイムデータ統合
     </text>
     <text x="120" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#fef3c7">
       キャプチャ • 転送 • フィルタ
@@ -166,7 +166,7 @@
       リアルタイムデータストリーム
     </text>
     <text x="690" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#d97706">
-      リアルタイムストリーム
+      
     </text>
   </g>
   
