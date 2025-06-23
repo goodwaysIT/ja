@@ -17,7 +17,7 @@ description: OracleデータベースとGoldenGate技術に関する最新の記
         <div class="post-excerpt">
           {{ post.excerpt | truncatewords: 25 }}
         </div>
-        <a href="{{ post.url | relative_url }}" class="read-more">Read More</a>
+        <a href="{{ post.url | relative_url }}" class="read-more">続きを読む</a>
       </div>
     {% endfor %}
   </div>
@@ -26,11 +26,11 @@ description: OracleデータベースとGoldenGate技術に関する最新の記
   <div class="pagination">
     {% if paginator.previous_page %}
       <a href="{{ paginator.previous_page_path | relative_url }}" class="previous">
-        <i class="fas fa-chevron-left"></i> Previous
+        <i class="fas fa-chevron-left"></i> 前へ
       </a>
     {% else %}
       <span class="previous disabled">
-        <i class="fas fa-chevron-left"></i> Previous
+        <i class="fas fa-chevron-left"></i> 前へ
       </span>
     {% endif %}
 
@@ -44,11 +44,11 @@ description: OracleデータベースとGoldenGate技術に関する最新の記
 
     {% if paginator.next_page %}
       <a href="{{ paginator.next_page_path | relative_url }}" class="next">
-        Next <i class="fas fa-chevron-right"></i>
+        次へ <i class="fas fa-chevron-right"></i>
       </a>
     {% else %}
       <span class="next disabled">
-        Next <i class="fas fa-chevron-right"></i>
+        次へ <i class="fas fa-chevron-right"></i>
       </span>
     {% endif %}
   </div>
