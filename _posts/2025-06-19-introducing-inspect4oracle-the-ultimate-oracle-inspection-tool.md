@@ -16,9 +16,11 @@ Oracle DBAまたはデータベース開発者として、このような問題�
 
 これらの課題は、今日で終わりです！本日、オープンソースのOracleデータベース検査アーティファクト、**Inspect4Oracle**を正式にリリースいたします！
 
-[Placeholder: Inspect4Oracleツールロゴまたはクールなバナー画像]
+<p align="center">
+  <img src="/assets/images/inspect4oracle/inspect4oracle-logo.svg" alt="Inspect4Oracle ロゴ" width="300">
+</p>
 
-`Inspect4Oracle`は、**[MITライセンス](LICENSE)**に基づいた、強力で使いやすく、完全にオープンソースのOracleデータベース検査ツールです。データベース管理者（DBA）、開発者、および運用エンジニア向けに特別に作られており、ユーザーがOracleデータベースの運用状況と健全性を迅速かつ包括的に理解するのを支援するように設計されています。
+`Inspect4Oracle`は、**[MITライセンス](https://github.com/goodwaysIT/inspect4oracle/blob/main/LICENSE)**に基づいた、強力で使いやすく、完全にオープンソースのOracleデータベース検査ツールです。データベース管理者（DBA）、開発者、および運用エンジニア向けに特別に作られており、ユーザーがOracleデータベースの運用状況と健全性を迅速かつ包括的に理解するのを支援するように設計されています。
 
 ## Inspect4Oracleが選ばれる理由
 
