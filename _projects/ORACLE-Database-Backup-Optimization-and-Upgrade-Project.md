@@ -2,12 +2,15 @@
 layout: page
 title: "ORACLE Databaseバックアップ最適化・アップグレード"
 description: "本記事では、主に、バックアップ/リカバリ時間の長さ、アーカイブログの容量の多さ、バックアップのタイミングの悪さ、バックアップジョブの分散、データ損失のリスク、バックアップ管理の難しさといった問題を解決するために、既存のバックアップ戦略とバックアップアーキテクチャを最適化する方法をお客様がどのように支援しているかについて紹介します。"
-excerpt: "金融機関 - Oracleデータベースのバックアップの最適化とアップグレード、Oracle Zdlraオールインワンゼロデータ損失プロジェクト"
+excerpt: "金融機関向けに、Oracleデータベースのバックアップ戦略を全面的に最適化・アップグレード。Oracle ZDLRAを導入し、バックアップ時間の大幅な短縮、管理の一元化、そしてリアルタイム保護によるゼロデータ損失の実現を達成した包括的なプロジェクト事例。"
 order: 3
-tags: [「Oracle」、「Oracle Exadata」、「バックアップ戦略の最適化」、「集中管理」、「高速リカバリ」、「ゼロデータ損失」]
+image: /assets/images/case-studies/oracle-backup-optimization-architecture.svg
+tags: ["Oracle", "Oracle Exadata", "バックアップ戦略の最適化", "集中管理", "高速リカバリ", "ゼロデータ損失"]
 ---
 
 # ORACLE Databaseバックアップ最適化・アップグレードプロジェクト
+
+![Oracle Database Backup Optimization Architecture]({{ '/assets/images/case-studies/oracle-backup-optimization-architecture.svg' | relative_url }})
 
 ## 背景  
 お客様の業務運用の発展に伴い、各データベースのデータ量は徐々に増加しています。同時に、新規業務の急成長により、月に約3～8の新しいデータベースがデプロイされています。データベースのバックアップとリカバリは重大な課題に直面しています：  

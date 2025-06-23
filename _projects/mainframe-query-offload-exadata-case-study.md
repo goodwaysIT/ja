@@ -2,7 +2,7 @@
 layout: page
 title: "メインフレームモダナイゼーション：コアクエリのOracle Exadataへのオフロード"
 description: "導入事例：当社チームがGoldenGateを使用してメインフレームのクエリアプリケーションをOracle Exadataにオフロードし、主要顧客のコストを大幅に削減し、パフォーマンスを向上させた方法。"
-excerpt: "当社のメインフレームオフロードとOracle GoldenGateにおける専門知識が、いかにして顧客のメインフレームシステムの負荷を軽減し、クエリ速度を向上させ、コア・クエリ機能をOracle Exadataに移行することで大幅なコスト削減を達成したかをご覧ください。この影響力のあるプロジェクト（2018年3月～2018年9月）は、複雑で影響力の大きいソリューションを提供する当社の能力を浮き彫りにします。"
+excerpt: "Oracle GoldenGateを活用し、メインフレームのクエリ機能をExadataへオフロードすることで、負荷軽減、速度向上、コスト削減を実現しました。このプロジェクトは、当社の複雑な課題解決能力を証明するものです。"
 order: 2
 image: /assets/images/case-studies/mainframe-exadata-offload-overview.svg # 替换为项目主图
 tags: ["メインフレームモダナイゼーション", "Oracle Exadata", "GoldenGate", "コスト最適化", "パフォーマンスチューニング", "EBCDIC", "レガシーシステム移行"]

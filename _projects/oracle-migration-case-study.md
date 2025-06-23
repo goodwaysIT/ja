@@ -2,11 +2,15 @@
 layout: page
 title: "Oracleデータベース移行事例"
 description: "GoldenGateを使用して、金融機関がゼロダウンタイムでOracle 19cに移行するのを支援した方法。"
-excerpt: "GoldenGateレプリケーションを使用して、金融機関のOracleデータベースを11gから19cにゼロダウンタイムで成功移行した事例。"
+excerpt: "金融機関の基幹Oracleデータベースを、GoldenGateのリアルタイムレプリケーション技術を駆使して、11gから19cへアップグレード。業務を一切停止しないゼロダウンタイム移行を実現し、システムの近代化、パフォーマンス向上、および長期サポートの確保に成功したプロジェクトです。"
 order: 1
+image: /assets/images/case-studies/oracle-migration-case-study.svg
+tags: ["Oracle", "Oracle Exadata", "ゼロダウンタイム", "ゼロデータ損失", "Oracle GoldenGate"]
 ---
 
 # Oracleデータベース移行事例
+
+![Oracle Database Migration Case Study]({{ '/assets/images/case-studies/oracle-migration-case-study.svg' | relative_url }})
 
 ## クライアント概要
 
