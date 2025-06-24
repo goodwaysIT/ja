@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Oracle高可用性：単なるバズワードではない"
-excerpt: "15年以上の実装経験を持つチームからのOracle HAソリューション（RAC、Data Guard、MAA）の詳細な解説。実世界の洞察、一般的な落とし穴、そして単なるチェックボックスではなく、本当のビジネス継続性を達成する方法。"
+excerpt: "この記事では、15年以上の実装経験を持つチームからのOracle HAソリューション（RAC、Data Guard、MAA）の詳細な解説します。実世界の洞察、一般的な落とし穴、そして単なるチェックボックスではなく、本当のビジネス継続性を達成する方法を説明します。"
 date: 2024-05-23 09:05:00 +0800 # Or your actual publication date
 categories: [Oracle, 高可用性, ビジネス継続性]
 tags: [oracle, data guard, rac, active-active, MAA, RPO, RTO, 災害復旧, ビジネス継続性, データベース HA]
