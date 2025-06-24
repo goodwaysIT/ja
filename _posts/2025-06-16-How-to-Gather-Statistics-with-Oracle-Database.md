@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Oracle データベースにおける統計情報の収集方法"
-excerpt: "このホワイト ペーパーでは、Oracle データベースでよく見られるシナリオについて、統計をいつどのように収集するかについて詳しく説明します。"
+excerpt: "この記事では、Oracle データベースでよく見られるシナリオについて、統計をいつどのように収集するかについて詳しく説明します。"
 date: 2025-06-16 17:51:00 +0800
 categories: [Oracle, Database]
 tags: [Database maintenance, Database deployment,Database optimization, oracle]
