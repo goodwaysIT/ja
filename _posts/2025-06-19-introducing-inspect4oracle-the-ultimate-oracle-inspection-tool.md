@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "究極のOracle検査ツール：Inspect4Oracleで非効率と決別し、効率化を実現！"
-excerpt: "Inspect4Oracleとは：強力なオープンソースのOracleデータベース検査ツール。直感的なWeb UIとインタラクティブなレポートで、日々のチェックを簡素化し、パフォーマンスのトラブルシューティングを行い、包括的な洞察を得ることができます。単一の実行ファイル、クロスプラットフォーム、そしてコミュニティ主導。"
+excerpt: "Inspect4Oracleは強力なオープンソースのOracleデータベース検査ツールです。直感的なWeb UIとインタラクティブなレポートで、日々のチェックを簡素化し、パフォーマンスのトラブルシューティングを行い、包括的な洞察を得ることができます。"
 date: 2025-06-20 14:26:00 +0800
 categories: [Oracle, ツール]
 tags: [oracle, dba, performance, monitoring, open-source, オラクル, パフォーマンス, 監視, オープンソース, データベース]
