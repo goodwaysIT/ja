@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "ORACLEデータベースインデックスの紹介と推奨"
-excerpt: "このドキュメントでは、ORACLEデータベースのパーティション表に関連付けられた索引の分類、適用シナリオ、推奨される使用法について、Q&A形式でご紹介します。"
+excerpt: "この記事では、ORACLEデータベースのパーティション表に関連付けられた索引の分類、適用シナリオ、推奨される使用法について、Q&A形式でご紹介します。"
 date: 2025-06-09 21:08:00 +0800
 categories: [Oracle, Database]
 tags: [Database maintenance, Database deployment,Database optimization, oracle]
