@@ -8,7 +8,7 @@ tags: [Database maintenance, Database deployment,Database optimization, oracle]
 image: /assets/images/posts/Description-and-recommendation-of-ORACLE-database-index.jpg
 ---
 
-このドキュメントは、Q&A形式を通じて、ORACLEデータベースのパーティションテーブルに関連するインデックスの分類、適用シナリオ、および推奨される使用方法を紹介することを目的としています。  
+この記事は、Q&A形式を通じて、ORACLEデータベースのパーティションテーブルに関連するインデックスの分類、適用シナリオ、および推奨される使用方法を紹介することを目的としています。  
 パーティションテーブル上にパーティションインデックスを作成するかグローバルインデックスを作成するかという一般的な懸念については、以下のQ&Aを参照してください:
 
 *  パーティションテーブルのインデックスの分類は？
