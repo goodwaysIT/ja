@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "4000バイトの制約を打ち破れ！Oracle MAX_STRING_SIZE=EXTENDED 究極ガイド：理論、シナリオ＆19cハンズオン"
-excerpt: "OracleのMAX_STRING_SIZE=EXTENDEDパラメータの使用に関する包括的なガイド。メリット、リスク、実装手順などを網羅。この記事では、理論、実践的なシナリオ、そしてOracle 19cのハンズオンガイドについて解説します。"
+title: "4000バイトの制限を突破！Oracle MAX_STRING_SIZE=EXTENDED完全ガイド"
+excerpt: "本記事はOracleのMAX_STRING_SIZE=EXTENDEDパラメータの使用に関する包括的なガイドです。メリット、リスク、実装手順などを網羅。この記事では、理論、実践的なシナリオ、そしてOracle 19cのハンズオンガイドについて解説します。"
 date: 2025-06-26 13:50:00 +0800
 categories: [Oracle, Database]
 tags: [Oracle, Database, MAX_STRING_SIZE, Extended Data Types, 19c]
