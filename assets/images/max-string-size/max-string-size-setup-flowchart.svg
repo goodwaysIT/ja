@@ -1,0 +1,104 @@
+<svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg">
+  <!-- タイトル -->
+  <text x="500" y="30" text-anchor="middle" font-size="24" font-weight="bold" fill="#333">Oracle 19cでMAX_STRING_SIZE=EXTENDEDを設定する</text>
+  
+  <!-- 開始ノード -->
+  <rect x="400" y="60" width="200" height="50" fill="#4CAF50" stroke="#333" stroke-width="2" rx="25"/>
+  <text x="500" y="85" text-anchor="middle" font-size="14" font-weight="bold" fill="white">開始</text>
+  <text x="500" y="100" text-anchor="middle" font-size="10" fill="white">MAX_STRING_SIZE設定</text>
+  
+  <!-- 矢印 -->
+  <line x1="500" y1="110" x2="500" y2="140" stroke="#333" stroke-width="2" marker-end="url(#arrowhead-ja)"/>
+  
+  <!-- 判定：データベースタイプ -->
+  <polygon points="500,140 600,190 500,240 400,190" fill="#FFD700" stroke="#333" stroke-width="2"/>
+  <text x="500" y="190" text-anchor="middle" font-size="14" font-weight="bold">データベース</text>
+  <text x="500" y="205" text-anchor="middle" font-size="14" font-weight="bold">タイプ？</text>
+  
+  <!-- 非CDBブランチ -->
+  <line x1="400" y1="190" x2="250" y2="190" stroke="#333" stroke-width="2" marker-end="url(#arrowhead-ja)"/>
+  <text x="325" y="185" text-anchor="middle" font-size="12" fill="#333">非CDB</text>
+  
+  <rect x="100" y="170" width="150" height="40" fill="#87CEEB" stroke="#333" stroke-width="2" rx="5"/>
+  <text x="175" y="195" text-anchor="middle" font-size="14" font-weight="bold">非CDBプロセス</text>
+  
+  <!-- 非CDBステップ -->
+  <rect x="50" y="240" width="250" height="160" fill="#E6F3FF" stroke="#2C5282" stroke-width="2" rx="5"/>
+  <text x="175" y="260" text-anchor="middle" font-size="12" font-weight="bold" fill="#2C5282">手順：</text>
+  <text x="60" y="280" font-size="11" fill="#333">1. SHUTDOWN IMMEDIATE</text>
+  <text x="60" y="300" font-size="11" fill="#333">2. STARTUP UPGRADE</text>
+  <text x="60" y="320" font-size="11" fill="#333">3. ALTER SYSTEM ... SPFILE</text>
+  <text x="60" y="340" font-size="11" fill="#333">4. @utl32k.sql</text>
+  <text x="60" y="360" font-size="11" fill="#333">5. SHUTDOWN / STARTUP</text>
+  <text x="60" y="380" font-size="11" fill="#333">6. 無効オブジェクト再コンパイル</text>
+  
+  <!-- CDBブランチ -->
+  <line x1="600" y1="190" x2="750" y2="190" stroke="#333" stroke-width="2" marker-end="url(#arrowhead-ja)"/>
+  <text x="675" y="185" text-anchor="middle" font-size="12" fill="#333">CDB</text>
+  
+  <!-- CDB判定：レベル -->
+  <polygon points="750,160 850,210 750,260 650,210" fill="#FFD700" stroke="#333" stroke-width="2"/>
+  <text x="750" y="210" text-anchor="middle" font-size="14" font-weight="bold">設定</text>
+  <text x="750" y="225" text-anchor="middle" font-size="14" font-weight="bold">レベル？</text>
+  
+  <!-- CDBレベルブランチ（推奨されない） -->
+  <line x1="650" y1="210" x2="550" y2="300" stroke="#333" stroke-width="2" marker-end="url(#arrowhead-ja)"/>
+  <text x="580" y="250" text-anchor="middle" font-size="11" fill="#333">CDBレベル</text>
+  <text x="580" y="265" text-anchor="middle" font-size="10" fill="#9B2C2C">（全PDBに影響）</text>
+  
+  <rect x="400" y="320" width="300" height="180" fill="#FFE6E6" stroke="#9B2C2C" stroke-width="2" rx="5"/>
+  <text x="550" y="340" text-anchor="middle" font-size="12" font-weight="bold" fill="#9B2C2C">CDB$ROOTプロセス（推奨されない）</text>
+  <text x="410" y="360" font-size="11" fill="#333">1. CDB$ROOTに接続</text>
+  <text x="410" y="380" font-size="11" fill="#333">2. SHUTDOWN IMMEDIATE</text>
+  <text x="410" y="400" font-size="11" fill="#333">3. STARTUP UPGRADE</text>
+  <text x="410" y="420" font-size="11" fill="#333">4. ALTER SYSTEM ... SPFILE</text>
+  <text x="410" y="440" font-size="11" fill="#333">5. @utl32k.sql（全PDBに伝播）</text>
+  <text x="410" y="460" font-size="11" fill="#333">6. SHUTDOWN / STARTUP</text>
+  <text x="410" y="480" font-size="11" fill="#333">7. 各PDBを個別に再コンパイル</text>
+  
+  <!-- PDBレベルブランチ（推奨） -->
+  <line x1="850" y1="210" x2="900" y2="300" stroke="#333" stroke-width="2" marker-end="url(#arrowhead-ja)"/>
+  <text x="875" y="250" text-anchor="middle" font-size="11" fill="#333">PDBレベル</text>
+  <text x="875" y="265" text-anchor="middle" font-size="10" fill="#2E7D32">（対象PDBのみ）</text>
+  
+  <rect x="750" y="320" width="230" height="180" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2" rx="5"/>
+  <text x="865" y="340" text-anchor="middle" font-size="12" font-weight="bold" fill="#2E7D32">PDBプロセス（ベストプラクティス）</text>
+  <text x="760" y="360" font-size="11" fill="#333">1. 対象PDBに接続</text>
+  <text x="760" y="380" font-size="11" fill="#333">2. ALTER PLUGGABLE</text>
+  <text x="770" y="395" font-size="11" fill="#333">   DATABASE OPEN UPGRADE</text>
+  <text x="760" y="415" font-size="11" fill="#333">3. ALTER SYSTEM ... SPFILE</text>
+  <text x="760" y="435" font-size="11" fill="#333">4. @utl32k.sql</text>
+  <text x="760" y="455" font-size="11" fill="#333">5. ALTER PLUGGABLE CLOSE/OPEN</text>
+  <text x="760" y="475" font-size="11" fill="#333">6. このPDBのみ再コンパイル</text>
+  
+  <!-- 終了への収束 -->
+  <line x1="175" y1="400" x2="175" y2="550" stroke="#333" stroke-width="2" marker-end="url(#arrowhead-ja)"/>
+  <line x1="550" y1="500" x2="550" y2="550" stroke="#333" stroke-width="2" marker-end="url(#arrowhead-ja)"/>
+  <line x1="865" y1="500" x2="865" y2="550" stroke="#333" stroke-width="2" marker-end="url(#arrowhead-ja)"/>
+  
+  <line x1="175" y1="550" x2="500" y2="550" stroke="#333" stroke-width="2"/>
+  <line x1="550" y1="550" x2="500" y2="550" stroke="#333" stroke-width="2"/>
+  <line x1="865" y1="550" x2="500" y2="550" stroke="#333" stroke-width="2"/>
+  <line x1="500" y1="550" x2="500" y2="580" stroke="#333" stroke-width="2" marker-end="url(#arrowhead-ja)"/>
+  
+  <!-- 終了ノード -->
+  <rect x="400" y="580" width="200" height="50" fill="#F44336" stroke="#333" stroke-width="2" rx="25"/>
+  <text x="500" y="610" text-anchor="middle" font-size="14" font-weight="bold" fill="white">終了</text>
+  
+  <!-- 凡例 -->
+  <rect x="30" y="480" width="250" height="100" fill="#F5F5F5" stroke="#333" stroke-width="1" rx="5"/>
+  <text x="40" y="500" font-size="14" font-weight="bold" fill="#333">凡例：</text>
+  <rect x="40" y="510" width="20" height="15" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+  <text x="65" y="523" font-size="12" fill="#333">推奨（PDBレベル）</text>
+  <rect x="40" y="535" width="20" height="15" fill="#FFE6E6" stroke="#9B2C2C" stroke-width="2"/>
+  <text x="65" y="548" font-size="12" fill="#333">推奨されない（CDBレベル）</text>
+  <rect x="40" y="560" width="20" height="15" fill="#E6F3FF" stroke="#2C5282" stroke-width="2"/>
+  <text x="65" y="573" font-size="12" fill="#333">標準プロセス（非CDB）</text>
+  
+  <!-- 矢印定義 -->
+  <defs>
+    <marker id="arrowhead-ja" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+</svg>
