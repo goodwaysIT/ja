@@ -1,4 +1,3 @@
-![V8~E32YOYY`KEE2${~Q$7)T](https://github.com/user-attachments/assets/97b34404-b617-476e-bb08-a0513eb70760)---
 layout: post
 title: "統計情報をより迅速に収集する方法"
 excerpt: "本論文では、Oracleデータベースで最も一般的なシナリオにおいて、いつ・どのように統計情報を収集すべきか詳細に議論します。"
