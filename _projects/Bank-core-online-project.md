@@ -4,6 +4,7 @@ title: "銀行コアオンラインプロジェクト"
 description: "銀行の新しいコアシステムプロジェクトにおいて、データベースインフラの分析、データ構造ロジック設計分析、パフォーマンス分析と最適化などを担当。"
 excerpt: "本プロジェクトは新しいコアデータベースは、パラメータ調整、データテーブルとデータディクショナリの統合と最適化などが行われ、さまざまなストレステストプランが策定されました。これにより、新コアデータベースが多様な業務シナリオに対応でき、データベースのパフォーマンスが向上し、データ拡張機能が強化され、高可用性・セキュリティ・安定性が強化されました。"
 order: 6
+image: /assets/images/case-studies/Bank-core-online-project.svg
 tags: ["Oracle", "Oracle Exadata", "Backup Strategy Optimization", "Centralized Management", "Faster Recovery", "Zero Data Loss"]
 ---
 
