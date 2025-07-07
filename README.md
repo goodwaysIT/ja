@@ -34,12 +34,12 @@ Goodways ITテクニカルハブへようこそ！当サイトは、Goodways IT�
 
 1.  **リポジトリをクローンする:**
     ```bash
-    git clone https://github.com/goodwaysit/en.git
-    cd en
+    git clone https://github.com/goodwaysit/ja.git
+    cd ja
     ```
 
 2.  **依存関係をインストールする:**
-    `en` ディレクトリ（またはJekyllプロジェクトのルートディレクトリが異なる構造の場合はそちら）に移動し、以下を実行します：
+    `ja` ディレクトリ（またはJekyllプロジェクトのルートディレクトリが異なる構造の場合はそちら）に移動し、以下を実行します：
     ```bash
     bundle install
     ```
