@@ -4,6 +4,7 @@ title: "銀行フロントエンド基盤データベースとオープンプラ
 description: ""
 excerpt: "複数のスキーマ、アプリケーション、またはデータベースがターゲットシステム上でホストされている場合、ハードウェアリソースの使用率は、統合と圧縮によって改善でき、アイドル時間サイクルを最小限に抑えることができます。その結果、より少ないリソースで同じ出力を達成でき、コスト削減につながります。"
 order: 8
+image: /assets/images/case-studies/Bank-Frontend-Platform-Database-and-Open-Platform-Database-Compression-and-Consolidation-Project.svg
 tags: ["Oracle", "Oracle Exadata", "Database Migration","Resource compression"]
 ---
 
