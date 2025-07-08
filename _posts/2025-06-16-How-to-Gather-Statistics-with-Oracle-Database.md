@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Oracle データベースにおける統計情報の収集方法"
-excerpt: "この記事では、Oracle データベースでよく見られるシナリオについて、統計をいつどのように収集するかについて詳しく説明します。"
+excerpt: "Oracleにおける統計情報の収集には、自動統計情報収集を使用することが推奨されます。既に確立された手動による統計情報収集手順がある場合は、そちらを使用することもできます。"
 date: 2025-06-16 17:51:00 +0800
 categories: [Oracle, Database]
 tags: [Database maintenance, Database deployment,Database optimization, oracle]
