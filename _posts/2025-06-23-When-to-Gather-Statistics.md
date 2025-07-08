@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "知っておくべきOracle統計情報の収集タイミングと方法"
-excerpt: "本記事では、Oracleデータベースで最も一般的なシナリオにおいて、統計情報をいつ、どのように収集すべきかについて詳細に紹介します。"
+excerpt: "最適な実行計画を選択するためには、オプティマイザが代表的な統計情報を持っている必要があります。代表的な統計情報とは、必ずしも最新の統計情報ではなく、実行計画内の各操作から期待される正しい行数をオプティマイザが判断するのに役立つ一連の統計情報です。 "
 date: 2025-06-23 11:40:00 +0800
 categories: [Oracle, Database]
 tags: [Database maintenance, Database deployment,Database optimization, oracle]
