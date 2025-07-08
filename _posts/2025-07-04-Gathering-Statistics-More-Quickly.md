@@ -1,14 +1,13 @@
 ---
 layout: post
 title: "統計情報をより迅速に収集する方法"
-excerpt: "本記事では、Oracleデータベースで最も一般的なシナリオにおいて、いつ・どのように統計情報を収集すべきか詳細に議論します。"
+excerpt: "データ量が増加しメンテナンス期間が短縮される中、統計情報をタイムリーに収集することはこれまで以上に重要です。Oracle では、統計収集処理の並列化から、実際にデータを収集するのではなく統計を生成する方法まで、さまざまな方法を提供しています。"
 date: 2025-07-04 11:00:00 +0800
 categories: [Oracle, Database]
 tags: [Database maintenance, Database deployment,Database optimization, oracle]
 image: /assets/images/posts/Gathering-Statistics-More-Quickly.jpg
 ---
 
-## 統計情報をより迅速に収集する方法
 データ量が増加しメンテナンス期間が短縮される中、統計情報をタイムリーに収集することはこれまで以上に重要です。Oracle では、統計収集処理の並列化から、実際にデータを収集するのではなく統計を生成する方法まで、さまざまな方法を提供しています。
 
 **並列処理の活用**  
