@@ -2,7 +2,7 @@
 layout: post
 title: 'OGGチェックポイントメカニズムの解明：CPE/CPR/CPTファイルからブレークポイント復旧原理まで'
 excerpt: 'OGGチェックポイントメカニズムの包括的分析、ファイル構造、ブレークポイント復旧原理、および運用ベストプラクティスについて'
-date: 2025-07-11 13:57:00 +0800
+date: 2025-07-14 13:57:00 +0800
 categories: [Oracle GoldenGate, データレプリケーション]
 tags: [ogg, checkpoint, cpe, cpr, cpt, breakpoint resume, データ整合性]
 author: Shane
