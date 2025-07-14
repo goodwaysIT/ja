@@ -4,7 +4,7 @@ title: 'OGGの秘密を解明：バイナリ構造・バージョン互換性か
 excerpt: '本記事ではOGGトレイルファイルを徹底解説します。logdumpによるバイナリ構造の可視化、バージョン互換性の問題、さらにエンディアン差に起因するクロスプラットフォーム移行のトラップまで、核心的な課題を解説します。'
 date: 2025-07-10 08:27:00 +0800
 categories: [Oracle GoldenGate, データレプリケーション]
-tags: [ogg, trail file, logdump, endianness, data migration]
+tags: [ogg, trail file, logdump, endianness, data migration, オラクルゴールデンゲート, データレプリケーション, クロスプラットフォーム移行, エンディアン]
 author: Shane
 ---
 
