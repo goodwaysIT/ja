@@ -1,21 +1,21 @@
 ---
 layout: post
-title: "銀行におけるADG、OGG及びデータウェアハウスシステムのアプリケーションアーキテクチャ技術に関する議論"
-excerpt: "銀行クライアントのADG、OGGおよびデータウェアハウスシステムに関するアプリケーションアーキテクチャ技術、現状と災害復旧要件の調査、論理レプリケーション（OGG）と物理レプリケーション（ADG）の比較、OGGとADGの長所短所の要約"
+title: "銀行システムにおけるADG・OGG・データウェアハウス技術のアプリケーションアーキテクチャ考察"
+excerpt: "銀行クライアントのADG・OGG・データウェアハウスシステムに関するアプリケーションアーキテクチャ技術、現状と災害復旧要件の調査、論理レプリケーション（OGG）と物理レプリケーション（ADG）の比較、OGGとADGの長所短所の要約"
 date: 2025-07-16 10:00:00 +0800
 categories: [Oracle, Database]
 tags: [Database Architecture, ADG, OGG, Disaster Recovery, Logical Replication, Physical Replication, oracle]
 image: /assets/images/posts/Discussion-on-Application-Architecture-Technologies-for-ADG-OGG.jpg
 ---
 
-## 現状と災害復旧要件調査  
+## 現状調査と災害復旧要件分析  
 
 - 既存の高可用性ソリューション  
-  - 現在はVPLEXベースの拡張RACを用いた2つのコンピュータールーム間のデュアルアクティブを実装  
+  - 現在はVPLEXベースのExtended RACを用いた2つのコンピュータールーム間のデュアルアクティブを実装  
 
 - ソースデータベース情報  
   - オペレーティングシステム：64ビット AIX 7100  
-  - データベース：Oracle 12.1.0.2 拡張RAC  
+  - データベース：Oracle 12.1.0.2 Extended RAC  
 
 - 災害復旧サイトの要件  
   - データ保護のためのデータ災害復旧を達成  
@@ -40,15 +40,15 @@ image: /assets/images/posts/Discussion-on-Application-Architecture-Technologies-
    - ADGはブロック自動修復機能を有するが、OGGにはない。  
    - OGGのデータ検証はADGより厳密でない。  
    - OGGにはデータ型制限あり（例：同一ROWIDがソース/ターゲットで異なるレコードやオブジェクトを指す可能性）。  
-   - 大規模なDML操作はOGGでより顕著な遅延を引き起こす。  
-   - ADGの設定とメンテナンスはより簡易。  
+   - 大規模な DML 操作では、OGG において遅延がより顕著
+   - ADGの設定とメンテナンスはより簡単。  
    - OGGのソース/ターゲットバックアップは相互互換不可。  
 
-## OGGとADGのまとめ  
+## まとめ  
 
 - ADGはデータ災害復旧保護の優先選択肢。  
 - 待機側でのバックアップや、ソースからの読み取り専用操作のオフロードにも利用可能。  
 - Oracleは強くADG環境の展開を推奨。データ倉庫へのデータ配布と、災害復旧の補完による追加保護の両方に活用可能。  
 - OGGはクロスバージョン・クロスプラットフォーム環境で待機側の書き込み操作が必要なシナリオに適す。  
 - アーキテクチャ上、ソース環境が64ビットAIXの場合、ADG経由での64ビットX86 Linuxターゲット環境への直接レプリケーションは非サポート。  
-- 加えて、Exadata上の現行Oracleデータベースバージョン11.2.0.3は非サポート。12.1.0.2へのアップグレードを推奨。  
+- さらに、Exadata上の現行Oracleデータベースバージョン11.2.0.3は非サポート。12.1.0.2へのアップグレードを推奨。  
