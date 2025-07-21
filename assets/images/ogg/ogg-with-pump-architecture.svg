@@ -75,7 +75,7 @@
     <line x1="350" y1="365" x2="350" y2="400" stroke="#666" stroke-width="2" marker-end="url(#arrowGray)"/>
     <rect x="290" y="410" width="120" height="60" rx="5" fill="url(#goodProcessGrad)" stroke="#449D44" stroke-width="2"/>
     <text x="350" y="445" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
-      データポンプ
+      Data Pump
     </text>
     <g transform="translate(450, 420)">
       <path d="M 30 40 C 10 40, 0 25, 15 20 C 5 20, 5 5, 20 5 C 25 0, 40 0, 45 5 C 60 5, 65 15, 55 20 C 70 20, 70 35, 50 40 Z" 
