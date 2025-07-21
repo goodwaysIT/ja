@@ -1,4 +1,4 @@
- ---
+---
 layout: post
 title: "Data Pump：単なる転送役ではなく、OGGアーキテクチャ最適化の鍵"
 excerpt: "Oracle GoldenGateのData Pumpは単なるデータ転送ツールではありません。疎結合化、ルーティング、堅牢性・柔軟性・セキュリティの向上を実現できます。"
