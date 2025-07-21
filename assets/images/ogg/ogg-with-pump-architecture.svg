@@ -40,16 +40,16 @@
       <ellipse cx="50" cy="60" rx="50" ry="20" fill="url(#dbGrad)" stroke="#306998" stroke-width="2"/>
       <path d="M 0 0 L 0 60" stroke="#306998" stroke-width="2" fill="none"/>
       <path d="M 100 0 L 100 60" stroke="#306998" stroke-width="2" fill="none"/>
-      <text x="50" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+      <text x="50" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">
         ソースデータベース
       </text>
     </g>
     <line x1="210" y1="230" x2="280" y2="230" stroke="#666" stroke-width="2" marker-end="url(#arrowGray)"/>
     <rect x="290" y="200" width="120" height="60" rx="5" fill="url(#processGrad)" stroke="#4A4A4A" stroke-width="2"/>
-    <text x="350" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+    <text x="350" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">
       プライマリ
     </text>
-    <text x="350" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+    <text x="350" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">
       抽出（エクストラクト）
     </text>
     <line x1="350" y1="265" x2="350" y2="310" stroke="#5CB85C" stroke-width="2" marker-end="url(#arrowGreen)"/>
@@ -74,7 +74,7 @@
     </g>
     <line x1="350" y1="365" x2="350" y2="400" stroke="#666" stroke-width="2" marker-end="url(#arrowGray)"/>
     <rect x="290" y="410" width="120" height="60" rx="5" fill="url(#goodProcessGrad)" stroke="#449D44" stroke-width="2"/>
-    <text x="350" y="445" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+    <text x="350" y="445" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">
       Data Pump
     </text>
     <g transform="translate(450, 420)">
@@ -97,28 +97,28 @@
       <ellipse cx="50" cy="50" rx="40" ry="15" fill="url(#trailGrad)" stroke="#5E5E5E" stroke-width="2"/>
       <path d="M 10 0 L 10 50" stroke="#5E5E5E" stroke-width="2" fill="none"/>
       <path d="M 90 0 L 90 50" stroke="#5E5E5E" stroke-width="2" fill="none"/>
-      <text x="50" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">
+      <text x="50" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">
         リモート
       </text>
-      <text x="50" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">
+      <text x="50" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">
         トレイルファイル
       </text>
     </g>
     <g transform="translate(200, 530)">
       <rect x="0" y="0" width="300" height="120" rx="10" fill="#F5FFF5" stroke="#5CB85C" stroke-width="2"/>
-      <text x="150" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#5CB85C">
+      <text x="150" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#5CB85C">
         利点：
       </text>
-      <text x="10" y="50" font-family="Arial, sans-serif" font-size="12" fill="#666">
+      <text x="10" y="50" font-family="Arial, sans-serif" font-size="10" fill="#666">
         ・ネットワーク障害時もキャプチャ継続
       </text>
-      <text x="10" y="70" font-family="Arial, sans-serif" font-size="12" fill="#666">
+      <text x="10" y="70" font-family="Arial, sans-serif" font-size="10" fill="#666">
         ・ローカルトレイルから再開可能
       </text>
-      <text x="10" y="90" font-family="Arial, sans-serif" font-size="12" fill="#666">
+      <text x="10" y="90" font-family="Arial, sans-serif" font-size="10" fill="#666">
         ・プロセス分離
       </text>
-      <text x="10" y="110" font-family="Arial, sans-serif" font-size="12" fill="#666">
+      <text x="10" y="110" font-family="Arial, sans-serif" font-size="10" fill="#666">
         ・高パフォーマンス＋高信頼性
       </text>
     </g>

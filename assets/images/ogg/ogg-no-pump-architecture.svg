@@ -36,16 +36,16 @@
       <ellipse cx="50" cy="60" rx="50" ry="20" fill="url(#dbGrad)" stroke="#306998" stroke-width="2"/>
       <path d="M 0 0 L 0 60" stroke="#306998" stroke-width="2" fill="none"/>
       <path d="M 100 0 L 100 60" stroke="#306998" stroke-width="2" fill="none"/>
-      <text x="50" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+      <text x="50" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">
         ソースデータベース
       </text>
     </g>
     <line x1="210" y1="230" x2="280" y2="230" stroke="#666" stroke-width="2" marker-end="url(#arrowGray)"/>
     <rect x="290" y="200" width="120" height="60" rx="5" fill="url(#processGrad)" stroke="#4A4A4A" stroke-width="2"/>
-    <text x="350" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+    <text x="350" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">
       プライマリ
     </text>
-    <text x="350" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+    <text x="350" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">
       抽出（エクストラクト）
     </text>
     <g transform="translate(450, 300)">
@@ -71,28 +71,28 @@
       <ellipse cx="50" cy="50" rx="40" ry="15" fill="url(#trailGrad)" stroke="#5E5E5E" stroke-width="2"/>
       <path d="M 10 0 L 10 50" stroke="#5E5E5E" stroke-width="2" fill="none"/>
       <path d="M 90 0 L 90 50" stroke="#5E5E5E" stroke-width="2" fill="none"/>
-      <text x="50" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">
+      <text x="50" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">
         リモート
       </text>
-      <text x="50" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">
+      <text x="50" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">
         トレイルファイル
       </text>
     </g>
     <g transform="translate(200, 400)">
       <rect x="0" y="0" width="300" height="120" rx="10" fill="#FFF5F5" stroke="#D9534F" stroke-width="2" stroke-dasharray="5,5"/>
-      <text x="150" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#D9534F">
+      <text x="150" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#D9534F">
         リスク：
       </text>
-      <text x="10" y="50" font-family="Arial, sans-serif" font-size="12" fill="#666">
+      <text x="10" y="50" font-family="Arial, sans-serif" font-size="10" fill="#666">
         ・ネットワーク障害でキャプチャプロセス停止
       </text>
-      <text x="10" y="70" font-family="Arial, sans-serif" font-size="12" fill="#666">
+      <text x="10" y="70" font-family="Arial, sans-serif" font-size="10" fill="#666">
         ・ローカルからの再起動不可
       </text>
-      <text x="10" y="90" font-family="Arial, sans-serif" font-size="12" fill="#666">
+      <text x="10" y="90" font-family="Arial, sans-serif" font-size="10" fill="#666">
         ・単一障害点
       </text>
-      <text x="10" y="110" font-family="Arial, sans-serif" font-size="12" fill="#666">
+      <text x="10" y="110" font-family="Arial, sans-serif" font-size="10" fill="#666">
         ・パフォーマンスボトルネック
       </text>
     </g>
