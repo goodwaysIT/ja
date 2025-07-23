@@ -1,14 +1,15 @@
 ---
 layout: post
-title: "複数のパーティション表に対する同時的な重いPMOPとDML実行中の高いライブラリ・キャッシュ・ロック待機"
-excerpt: "同じ表に対してパーティション保守操作（PMOP）と同時にDMLが実行される場合、高い「library cache lock」と「library cache load lock」待機が観察されました。"
+title: "複数のパーティション表に対するPMOPとDMLの同時実行中の高いライブラリ・キャッシュ・ロック待機"
+excerpt: "同じテーブルに対してパーティション保守操作（PMOP）と同時にDMLが実行される場合、高い「library cache lock」と「library cache load lock」待機が観察されました。"
 date: 2025-07-22 17:00:00 +0800
 categories: [Oracle, Database]
 tags: [Library Cache Lock, library cache load lock, High Waits, oracle]
 image: /assets/images/posts/High-Library-Cache-Lock-Waits.jpg
 ---
 
-## 症状  
+## 問題  
+
 同じ表に対してパーティション保守操作（PMOP）と同時にDMLが実行される場合、高い「library cache lock」と「library cache load lock」待機が観察されました。このケースでは、同じ表に対して約1秒ごとに新しいパーティションが追加され別のパーティションが削除されながら、同時にDMLも実行されていました。同様のワークロードが他のパーティション表に対しても同時に行われていました。  
 AWRレポートは以下のような状態を示していました：  
 
@@ -28,7 +29,7 @@ AWRレポートは以下のような状態を示していました：
 |Disk file operations I/O    |14,810,701                    |140.5              |0.01              |.1        |ユーザーI/O|
 
 ## 解決策  
-Oracleは、パーティション表に対するPMOPとDMLの混在を推奨しません。これはPMOPがカーソル無効化を引き起こすためです（期待される動作）。同じパーティション表でPMOPと重いDMLを混在させる影響を軽減するには、以下の対策を実施してください。  
+Oracleは、パーティション表に対するPMOPとDMLの混在を推奨しません。これはPMOPがカーソル無効化を引き起こすためです。同じパーティション表でPMOPと重いDMLを混在させる影響を軽減するには、以下の対策を実施してください。。  
 
 1. AWRのトップ10イベントリストに「cursor: pin S wait on X」待機も表示される場合、以下のバグ修正パッチの適用を検討してください：  
 パッチ 14380605 : HIGH LIBRARY CACHE LOCK,CURSOR: PIN S WAIT ON X AND LIBRARY CACHE: MUTEX X  
