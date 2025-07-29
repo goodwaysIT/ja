@@ -4,7 +4,7 @@ title: "OGG BATCHSQL解説：SQL配列実行からパフォーマンスチュー
 excerpt: "OGG Replicatのパフォーマンスチューニングの中核「BATCHSQLパラメータ」を徹底的に解説します。本記事では、配列実行原理、GROUPTRANSOPSとの相乗的チューニング戦略、そして安全にBATCHSQLを活用して10倍の性能向上を実現する方法を明らかにします。"
 date: 2025-07-24 14:00:00 +0800
 categories: [Oracle GoldenGate, Performance]
-tags: [ogg, replicat, batchsql, performance tuning, grouptransops]
+tags: [ogg, replicat, batchsql, performance tuning, grouptransops, オラクルゴールデンゲート, パフォーマンスチューニング, クロスプラットフォーム移行, エンディアン]
 author: Shane
 image: /assets/images/posts/ogg-batchsql-performance.svg
 ---
