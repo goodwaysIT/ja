@@ -1,16 +1,16 @@
 ---
 layout: post
-title: "PGAメモリ操作待機イベント：異なるテーブルデータ量による事象"
-excerpt: "SQL実行がACTIVE状態で滞留（SQLにCONNECT BY/regexp_substrを含む）。待機時間がPGAメモリ操作に起因していた。"
+title: "異なるテーブルデータ量による PGA メモリ操作の待機イベント"
+excerpt: "CONNECT BY／regexp_substrを含むSQL文の実行が、PGAメモリ操作による待機時間でACTIVE状態で滞留しました。"
 date: 2025-07-29 15:00:00 +0800
 categories: [Oracle, Database]
 tags: [PGA Memory Operation, Wait Event, High Waits, oracle]
 image: /assets/images/posts/PGA-Memory-Operation-Wait-Event.jpg
 ---
 
-## 事象説明
-SQL実行がACTIVE状態で滞留（SQLにCONNECT BY / regexp_substrを含む）。待機時間がPGAメモリ操作に起因していた。  
-このSQLはテスト環境（Oracle 19.3）では正常に実行されたが、本番環境（Oracle 19.7）では実行に失敗した。  
+## イベントの説明
+CONNECT BY／regexp_substrを含むSQL文の実行が、PGAメモリ操作による待機時間でACTIVE状態で滞留しました。。  
+このSQLはテスト環境（Oracle 19.3）では正常に実行されましたが、本番環境（Oracle 19.7）では実行が停止しました。
 
 ## SQLHCレポート
 
@@ -51,10 +51,9 @@ Value ID Owner Name ID Name
 2 753884331 3 CONNECT BY WITHOUT FILTERING (UNIQUE) ON CPU 110905. 《----- Top count
 ```
 
-## 追加分析手順
-SQLID c9333k2g237qx のSQLHC情報分析結果：当該SQLは長時間実行されていたが、時間はCPU Timeに費やされ、長期間のPGAメモリ操作待機イベントは確認されなかった。  
-問題は実行計画、テーブルサイズ、統計情報、渡されるバインディング変数の差異にある可能性がある。テスト環境での実行状況比較が必要。以下情報を提供ください。  
+## 後続の分析手順
 
+SQL ID c9333k2g237qxに対するSQLHC情報の分析を通じて、当該SQLは長時間実行されていたことが判明しましたが、時間の大部分はCPU Timeに費やされており、長時間にわたるPGAメモリ操作に関する待機イベントは観測されませんでした。問題の原因は、実行計画、テーブルサイズ、統計情報、またはバインド変数の違いにある可能性があります。テスト環境における実行状況と比較する必要があります。以下の情報を提供ください。
 1. テスト環境（Oracle 19.3）で当該SQLのSQLHCを収集  
 2. テスト環境と本番環境の両方で、当該SQLの10046トレースと10053トレースを収集  
 ```SQL
@@ -65,7 +64,7 @@ SQL> alter session set events '10053 trace name context forever, level 2';
 SQL> alter session set events '10046 trace name context forever, level 12';
 ```
 
-事象再現SQLを実行  
+問題を再現するためにステートメントを実行します。
 実行時間が非常に長い場合、10～20分後に強制中断  
 ```SQL
 SQL> alter session set events '10046 trace name context off';
@@ -94,6 +93,6 @@ set markup html off
 spool off
 ```
 
-## 問題概要
-追加分析で判明：テスト環境(19.3)と本番環境(19.7)でデータ量が異なっていた。  
-同一データ量ではテスト環境でもSQL実行失敗。開発側がSQL修正（新たなフィルタ条件追加）後、正常動作した。  
+## まとめ
+後続の分析により、テスト環境（19.3）と本番環境（19.7）でデータ量が異なっていたことが判明しました。
+同じデータを使用した場合でも、テスト環境ではSQLが正常に実行されませんでした。その後、開発チームがSQLに新たなフィルタ条件を追加して修正したことで、SQLは正常に実行されるようになりました。
