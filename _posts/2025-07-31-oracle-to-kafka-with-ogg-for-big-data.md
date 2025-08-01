@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "OGG for Big Dataを使用したOracle CDCからKafkaへのストリーミング：設定ガイド"
-excerpt: "Oracle GoldenGate for Big Dataを使用して、OracleデータベースからKafkaへリアルタイムの変更データキャプチャ（CDC）をストリーミングするためのエンドツーエンドの設定ガイドを学びます。この記事では、アーキテクチャ、主要なパラメータ設定、およびベストプラクティスについて詳しく説明します。"
+title: "Oracle Big Data向けGoldenGateを使用したOracle CDCのKafkaストリーミング"
+excerpt: "Oracle GoldenGate for Big Dataを使用して、OracleデータベースからKafkaへリアルタイムの変更データキャプチャ（CDC）をストリーミングするためのエンドツーエンドの設定ガイドを紹介します。この記事では、アーキテクチャ、主要なパラメータ設定、およびベストプラクティスについて詳しく説明します。"
 date: 2025-07-31 14:05:00 +0800
 categories: [Oracle GoldenGate, Big Data]
 tags: [ogg, big data, kafka, cdc, data integration, json, handler]
@@ -15,11 +15,11 @@ Oracle、DB2、PostgreSQLなどのさまざまなデータベースからKafka�
 
 しかし、OGG for Big Dataには大きな学習曲線があります。その設定、特にReplicatプロパティファイルは、従来のOGGとは大きく異なり、多くのパラメータを含んでいるため、新規ユーザーにとっては困難な場合があります。
 
-このガイドでは、明確で再現可能なエンドツーエンドの設定プロセスを提供します。OracleからKafkaへのデータパイプラインを設定するための主要なパラメータをカバーし、OGG for Big Dataの動作メカニズムを説明します。
+本記事では、明確で再現可能なエンドツーエンドの設定プロセスを提供します。OracleからKafkaへのデータパイプラインを設定するための主要なパラメータをカバーし、OGG for Big Dataの動作メカニズムを説明します。
 
 ### 1. アーキテクチャ概要：OGG for Big DataはどのようにKafkaと通信するか
 
-手を汚す前に、まずこのアーキテクチャのワークフローを理解する必要があります。これは従来のOGGアーキテクチャと類似点がありますが、根本的に異なります。
+まず、このアーキテクチャのワークフローを理解する必要があります。これは従来のOGGアーキテクチャと類似点がありますが、根本的に異なります。
 
 **アーキテクチャ図：**
 ![OGG for Big Data to Kafka Architecture]({{ '/assets/images/ogg/ogg-bigdata-kafka-architecture.svg' | relative_url }})
@@ -27,15 +27,14 @@ Oracle、DB2、PostgreSQLなどのさまざまなデータベースからKafka�
 1.  **ソース（Oracle）**：従来のOGGと同様に、ソースでプライマリExtractプロセス（通常はIntegrated Extract）を設定して、データベースのRedoログをキャプチャし、ローカルTrailファイルを生成します。
 2.  **データ転送**：ソースからOGG for Big Dataサーバー上のリモートTrailファイル（`rt`）にローカルTrailファイル（`lt`）を転送するために、引き続きData Pumpプロセスを使用することを強くお勧めします。これにより、アーキテクチャの分離と堅牢性が確保されます。
 3.  **ターゲット（OGG for Big Data + Kafka）**：**これが核心的な違いです**。もはやSQLを直接適用する従来のReplicatプロセスは使用しません。代わりに、特別な**Big Data Replicat**を使用します。このReplicatはどのターゲットデータベースにも接続せず、「**ハンドラ**」をロードすることで外部システムと対話します。このシナリオでは、このハンドラは**Kafkaハンドラ**です。
-    *   **Big Data Replicat**：その主な責任は、Trailファイルからデータレコードを読み取ることです。
-    *   **Kafkaハンドラ**：Replicatから渡されたデータレコードを受け取り、指定された形式（例：JSON）でKafkaメッセージに変換し、標準のKafka Producer APIを介して指定されたトピックに送信する責任があります。
-
+    *   **Big Data Replicat**：主な役割は、Trailファイルからデータレコードを読み込むことです。
+    *   **Kafkaハンドラ**：Replicatから受け取ったデータレコードを指定されたフォーマット（例：JSON）に変換し、Kafkaの標準Producer APIを使用して、所定のTopicにメッセージとして送信します。
+   
 本質的に、**KafkaハンドラはOGG ReplicatとKafkaクラスタ間のコネクタとして機能します**。
 
 ### 2. ハンズオンラボ：エンドツーエンド設定手順（OGG 19c、Kafka 3.7.2）
 
-さあ、袖をまくって作業に取り掛かりましょう。ソースのExtractとPumpはすでに設定済みで、データはOGG for Big Dataサーバーの`./dirdat/rt`ディレクトリに継続的に転送されていると仮定します。
-
+それでは、実際に手を動かして設定を進めましょう。ここでは、ソース側の Extract および Pump がすでに構成されており、OGG for Big Data サーバ上の`./dirdat/rt`ディレクトリにデータが継続的に転送されていることを前提とします。
 #### ステップ1：Big Data Replicatプロセスの設定
 
 OGG for Big DataのGGSCIで、`ADD REPLICAT`コマンドを使用してターゲットプロセスを追加します。
@@ -62,7 +61,7 @@ MAP source_schema.source_table, TARGET source_schema.source_table;
 ```
 *   **Note**: In a Big Data context, the `TARGET` clause in the `MAP` statement is usually ignored because the real "target" (like a Kafka Topic) is defined in the `.properties` file. However, maintaining the full `MAP ... TARGET ...` structure is a good habit.
 
-#### ステップ3：Kafkaハンドラプロパティファイル（`kafka.properties`）の作成 - 核心中の核心
+#### ステップ3：Kafkaハンドラプロパティファイル（`kafka.properties`）の作成 - 核心
 
 このファイルは、設定全体の中で最も重要な部分です。接続の詳細からデータ形式、プロデューサー設定まで、Kafkaハンドラのすべての動作を制御します。
 
@@ -122,8 +121,7 @@ gg.handler.kafka.producer.linger.ms=0
 START repkafka
 ```
 
-次に、Kafkaサーバーにログインし、コマンドラインツールを使用して対応するトピックを消費します。OracleデータベースからリアルタイムでストリーミングされるJSON形式のデータ変更メッセージが表示されるはずです！
-
+次に、Kafka サーバーにログインし、コマンドラインツールを使用して対応するトピックをコンシュームします。Oracle データベースからリアルタイムでストリーミングされる JSON 形式のデータ変更メッセージが表示されるはずです。
 ```sh
 # Kafkaサーバーで実行
 kafka-console-consumer.sh --bootstrap-server kakfaserver:9092 --topic source_table --from-beginning
@@ -153,7 +151,7 @@ kafka-console-consumer.sh --bootstrap-server kakfaserver:9092 --topic source_tab
 
 ### 結論
 
-このガイドでは、OracleからKafkaへのエンドツーエンドのデータ統合プロセスについて説明しました。OGG for Big Dataの機能は、その**ハンドラメカニズム**と関連する**プロパティ設定ファイル**を中心に展開されます。
+本記事では、OracleからKafkaへのエンドツーエンドのデータ統合プロセスについて説明しました。OGG for Big Dataの機能は、その**ハンドラメカニズム**と関連する**プロパティ設定ファイル**を中心に展開されます。
 
 このデータパイプラインの主要コンポーネントを確認しましょう：
 
