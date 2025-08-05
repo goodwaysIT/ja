@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "ORA-04030: Oracle GoldenGate使用時のプロセスメモリ不足エラー（<nn>バイトの割り当て失敗）"
-excerpt: "本問題はSYSTEM.LOGMNR_LOG$テーブルに大量のエントリが蓄積されることが原因で発生します。SYSTEM.LOGMNR_LOG$は、Oracle GoldenGate ExtractプロセスおよびStreams Captureプロセスに必要なアーカイブログファイルを格納します。"
+excerpt: "この問題は、SYSTEM.LOGMNR_LOG$ テーブルに大量のエントリが存在することが原因です。SYSTEM.LOGMNR_LOG$ テーブルは、Oracle GoldenGate Extract プロセスおよび Streams Capture プロセスに必要なアーカイブ済みログファイルを格納しています。"
 date: 2025-08-04 15:00:00 +0800
 categories: [Oracle, Database, GoldenGate]
 tags: [ORA-04030, プロセスメモリ不足, SYSTEM.LOGMNR_LOG$, GoldenGate, oracle]
@@ -9,7 +9,7 @@ image: /assets/images/posts/ORA-04030-Out-Of-Process-Memory-When-Using-Oracle-Go
 ---
 
 ## 現象  
-データベースアラートログに以下のメモリエラーが記録される:  
+データベースアラートログに以下のメモリエラーが記録されます:  
 ```
 Errors in file /u01/app/oracle/diag/rdbms/oggdb/oggdb1/trace/oggdb1_ppa7_120312.trc (incident=52058):
 ORA-04030: out of process memory when trying to allocate bytes (,)
@@ -22,7 +22,7 @@ Use ADRCI or Support Workbench to package the incident.
 See Note 411.1 at My Oracle Support for error and packaging details.
 ```
 
-データベーストレースファイルにも以下の内容が出力される:  
+データベーストレースファイルにも以下の内容が出力されます:  
 ```
 *** 2024-08-28T15:58:23.231573+08:00
 *** SESSION ID:(291.42918) 2024-08-28T15:58:23.231582+08:00
@@ -70,12 +70,12 @@ ksedst <- dbkedDefDump <- ksedmp <- dbgexPhaseII <- dbgexProcessError
 ```
 
 ## 変更内容  
-Oracle Grid Control経由でGoldenGateまたはStreams監視機能を使用している。  
+Oracle Grid Control経由でGoldenGateまたはStreams監視機能を使用しています。  
 
 ## 原因  
-問題はSYSTEM.LOGMNR_LOG$テーブルに大量のエントリが蓄積されることが原因で発生します。  
-SYSTEM.LOGMNR_LOG$は、Oracle GoldenGate ExtractプロセスおよびStreams Captureプロセスに必要なアーカイブログファイルを格納します。  
-何らかの理由でアーカイブログファイルがシステムから適切にパージされない場合、このテーブルは肥大化し、dba_capture、gv$streams_capture、gv$xstream_capture、gv$goldengate_captureなどのこのテーブルを使用するビューをクエリする際にエラーが発生する可能性があります。  
+問題は、SYSTEM.LOGMNR_LOG$ テーブルに大量のエントリが存在することによって引き起こされます。
+SYSTEM.LOGMNR_LOG$は、Oracle GoldenGate ExtractプロセスおよびStreams Captureプロセスに必要なアーカイブログファイルを格納します。    
+何らかの理由でアーカイブログファイルがシステムから正しく削除されない場合、このテーブルは増大し、このテーブルを使用するビュー（例えば dba_capture、gv$streams_capture、gv$xstream_capture、gv$goldengate_capture）をクエリする際にエラーが発生する可能性があります。
 本ケースでは、Grid Control DBエージェントがGG/Streamsレイテンシスループット統計の一部としてこのクエリを発行しています:  
 
 ```
@@ -87,7 +87,7 @@ union all
 ```
 
 ## 解決策  
-重要: データベースが19.17DBRU以下または21cリリースの場合、既知の内部バグ34115836に対する修正が適用されていないとパージルーチンが機能しない可能性があります。このバグ修正は19.18DBRUおよび23.1以降に含まれています。詳細はDoc ID 34115836.8を参照してください。  
+重要: データベースが 19.17DBRU 以下、または 21c リリースである場合、既知の内部バグ 34115836 の修正が必要です。これが適用されていないと、パージ処理が正しく機能しない可能性があります。このバグ修正は、19.18DBRU および 23.1 以降に含まれています。詳細は Doc ID 34115836.8 を参照してください。  
 GoldenGateまたはStreamsによる使用後にアーカイブログファイルが適切にパージされない原因は複数考えられます。以下は両方の問題（アーカイブログファイルのパージとORA-04030エラー）を解決する一般的なアプローチです:  
 ### 1.以下のクエリを使用して、各GoldenGate Extract（またはStreams Capture）プロセスに関連付けられたアーカイブログファイルの数を確認します:  
 
@@ -196,7 +196,7 @@ conn / as sysdba
 exec dbms_capture_adm.set_parameter('<capture_name>','_CHECKPOINT_FORCE','Y');
 ```
 
-### 5.このクエリのAPPLIED_SCNとREQUIRED_CHECKPOINT_SCNのうち小さい方の値に、Extract/CaptureプロセスのFIRST_SCNを設定します:  
+### 5.次のクエリから取得した APPLIED_SCN と REQUIRED_CHECKPOINT_SCN のうち、最低値を該当する Extract／Capture プロセスの FIRST_SCN に設定します:  
 ```SQL
 select capture_name, status, to_char(APPLIED_SCN), to_char(REQUIRED_CHECKPOINT_SCN) from dba_capture where capture_name = '<capture_name>';
 ```
@@ -232,3 +232,4 @@ OGG抽出プロセスを再作成すると、「PURGEABLE」アーカイブロ�
 DELETE FROM SYSTEM.LOGMNR_LOG$ WHERE (THREAD#, SEQUENCE#, RESETLOGS_CHANGE#, RESET_TIMESTAMP) IN
 (SELECT DISTINCT P.THREAD#, P.SEQUENCE#, P.RESETLOGS_CHANGE#, P.RESET_TIMESTAMP AS RESETLOGS_ID FROM SYSTEM.LOGMNR_LOG$ P WHERE BITAND(P.STATUS, 2) = 2 MINUS SELECT DISTINCT Q.THREAD#, Q.SEQUENCE#, Q.RESETLOGS_CHANGE#, Q.RESET_TIMESTAMP AS RESETLOGS_ID FROM SYSTEM.LOGMNR_LOG$ Q WHERE BITAND(Q.STATUS, 2) <> 2) ;
 ```
+
