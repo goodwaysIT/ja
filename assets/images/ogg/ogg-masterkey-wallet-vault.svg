@@ -62,7 +62,7 @@
   </defs>
   
   <!-- Background -->
-  <rect width="1200" height="600" fill="url(#backgroundGradient)"/>
+  <rect width="1200" height="600" fill="#f8f9fa"/>
   
   <!-- Central Oracle Wallet -->
   <g id="oracleWallet" transform="translate(600,300)">
