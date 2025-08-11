@@ -1,4 +1,4 @@
- n---
+---
 layout: post
 title: "ORA-00600 エラーによるデータベースインスタンスの再起動"
 excerpt: "データベースアラートログに ORA-00600: internal error code, arguments: [kclantilock_17], [25770556553] が記録され、データベースインスタンスの異常な再起動を引き起こしました。"
@@ -121,4 +121,5 @@ alter system set "_gc_persistent_read_mostly"=false scope=spfile sid='*' ;
 ## 参照資料  
 Bug 33896423 - [RAC] 古いAntilockをフラッシュし、kclcls_2とkclantilock_17をソフトアサートに変換 (Doc ID 33896423.8)  
 Bug 27162390 - RAC LMSプロセスがORA-600 [kclantilock_17]エラーを発生させインスタンスがクラッシュする (Doc ID 27162390.8)  
+
 
