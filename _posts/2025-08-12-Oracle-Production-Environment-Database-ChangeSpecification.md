@@ -70,7 +70,7 @@ CREATE SEQUENCE seq_order_id
 RAC環境推奨設定: CACHE+NOORDER。order属性未指定時、RACはデフォルトでキャッシュ値20に設定します。高頻度使用シーケンスはキャッシュを1000~2000に調整します。
 
 ## III. スクリプトコーディング仕様  
-要件	例/説明  
+要件例/説明  
 文字セット	AL32UTF8必須  
 ファイルエンコーディング	UNIX形式、BOMなしUTF-8  
 トランザクション制御	DMLは明示的なCOMMIT/ROLLBACK必須  
@@ -150,4 +150,5 @@ CREATE INDEX old_index_name ... NOLOGGING PARALLEL 8;  -- 並列処理で再構�
 └── ER_diagram.pdf # 設計文書  
 
 重要原則：すべての本番環境変更は「監査可能、ロールバック可能、追跡可能」の3原則に従わなければなりません。スクリプト実行後、ログは自動的にDBAチームへメール送信する必要があります。  
+
 
