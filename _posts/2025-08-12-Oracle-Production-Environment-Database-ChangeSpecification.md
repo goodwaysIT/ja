@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Oracle本番環境データベース変更仕様書"
-excerpt: "すべての本番環境変更は「監査可能、ロールバック可能、追跡可能」の3原則に従うこと。スクリプト実行後、ログは自動的にDBAチームへメール送信すること。"
+title: "Oracle本番環境データベース変更仕様"
+excerpt: "すべての本番環境変更は、監査可能・ロールバック可能・追跡可能という三原則に従わなければなりません。スクリプト実行後、ログは自動的にDBAチームへメール送信する必要があります。"
 date: 2025-08-12 10:00:00 +0800
 categories: [Oracle, Database]
 tags: [Rollback Plan Design, Specification, oracle]
@@ -12,7 +12,7 @@ image: /assets/images/posts/Oracle-Production-Environment-Database-ChangeSpecifi
 ### 前提条件  
 
 すべての変更は作業指示システムによる承認が必要です（設計文書添付必須）  
-実行者はDBA認定資格を保持していること  
+実行者はDBA認定資格を保有していなければなりません  
 変更ウィンドウ：業務ピーク時間外（例：23:00-5:00）  
 スクリプト命名規則：  
 [プロジェクト番号]_[オブジェクト種別]_[機能]_[日付].sql  
@@ -67,7 +67,7 @@ CREATE SEQUENCE seq_order_id
   INCREMENT BY 1
   NOCACHE NOCYCLE;
 ```
-RAC環境推奨設定: CACHE+NOORDER。order属性未指定時、RACはデフォルトでキャッシュ値20のこの設定となる。高頻度使用シーケンスはキャッシュを1000~2000に調整。
+RAC環境推奨設定: CACHE+NOORDER。order属性未指定時、RACはデフォルトでキャッシュ値20に設定します。高頻度使用シーケンスはキャッシュを1000~2000に調整します。
 
 ## III. スクリプトコーディング仕様  
 要件	例/説明  
@@ -149,4 +149,5 @@ CREATE INDEX old_index_name ... NOLOGGING PARALLEL 8;  -- 並列処理で再構�
 └── docs  
 └── ER_diagram.pdf # 設計文書  
 
-重要原則：すべての本番環境変更は「監査可能、ロールバック可能、追跡可能」の3原則に従うこと。スクリプト実行後、ログは自動的にDBAチームへメール送信すること。  
+重要原則：すべての本番環境変更は「監査可能、ロールバック可能、追跡可能」の3原則に従わなければなりません。スクリプト実行後、ログは自動的にDBAチームへメール送信する必要があります。  
+
