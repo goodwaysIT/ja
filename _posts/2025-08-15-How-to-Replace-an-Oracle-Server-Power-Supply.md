@@ -2,7 +2,7 @@
 layout: post
 title: "Oracle Server X7-2LまたはX8-2Lの電源ユニット交換方法"
 excerpt: "サーバーの冗長電源は同時メンテナンスをサポートしており、もう一方の電源がオンラインで正常に動作している場合、サーバーのシャットダウンなしで電源ユニットを取り外し交換できます。"
-date: 2025-08-12 10:00:00 +0800
+date: 2025-08-15 10:00:00 +0800
 categories: [Oracle, Database]
 tags: [ODA Power Supply, X7-2L, X8-2L, power supply fails, oracle]
 image: /assets/images/posts/How-to-Replace-an-Oracle-Server-Power-Supply.jpg
@@ -67,3 +67,4 @@ Oracle Server X7-2L ドキュメント:
 http://docs.oracle.com/cd/E72463_01/index.html  
 Oracle Server X8-2L ドキュメント:  
 https://docs.oracle.com/cd/E93361_01/index.html  
+
