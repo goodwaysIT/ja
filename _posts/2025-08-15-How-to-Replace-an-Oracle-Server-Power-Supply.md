@@ -9,7 +9,7 @@ image: /assets/images/posts/How-to-Replace-an-Oracle-Server-Power-Supply.jpg
 ---
 
 ## 目標  
-Oracle Server X7-2LまたはX8-2Lの電源ユニット交換方法  
+Oracle Server X7-2LまたはX8-2Lの電源ユニットを交換  
 
 ## 解決策  
 手順指示  
@@ -67,4 +67,5 @@ Oracle Server X7-2L ドキュメント:
 http://docs.oracle.com/cd/E72463_01/index.html  
 Oracle Server X8-2L ドキュメント:  
 https://docs.oracle.com/cd/E93361_01/index.html  
+
 
