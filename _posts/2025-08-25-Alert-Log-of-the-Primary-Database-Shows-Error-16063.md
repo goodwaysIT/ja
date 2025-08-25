@@ -92,7 +92,7 @@ fcdbdg fcdb PHYSICAL STANDBY 300985510289 0
 fcdbsdb fcdb PHYSICAL STANDBY 300985510884 0
 ```
 
-スタンバイ・データベースで最後に受信したシーケンス番号と最後に適用されたシーケンス番号を確認。  
+スタンバイ・データベースで最後に受信したシーケンス番号と最後に適用されたシーケンス番号を確認します。  
 ```
 SYS@fcdb1>
 SYS@fcdb1> SELECT al.thrd "Thread", almax "Last Seq Received", lhmax "Last Seq Applied" FROM (select thread# thrd, MAX(sequence#) almax FROM v$archived_log WHERE resetlogs_change#=(SELECT resetlogs_change# FROM v$database) GROUP BY thread#) al, (SELECT thread# thrd, MAX(sequence#) lhmax FROM v$log_history WHERE resetlogs_change#=(SELECT resetlogs_change# FROM v$database) GROUP BY thread#) lh WHERE al.thrd = lh.thrd;
@@ -104,7 +104,7 @@ Thread Last Seq Received Last Seq Applied
 2 rows selected.
 ```
 
-V$DATAGUARD_STATSビューから転送遅延（transport lag）と適用遅延（apply lag）を確認。これはLGWRログ転送とリアルタイム適用が使用されている場合にのみ関連します。  
+V$DATAGUARD_STATSビューから転送遅延（transport lag）と適用遅延（apply lag）を確認します。これはLGWRログ転送とリアルタイム適用が使用されている場合にのみ関連します。  
 ```
 SYS@fcdb1>
 SYS@fcdb1>SELECT * FROM v$dataguard_stats WHERE name LIKE '%lag%';
@@ -131,3 +131,4 @@ alter system set "_REDO_TRANSPORT_ASYNC_MODE"=1 scope=spfile sid='*'; --> this p
 
 ## 参考情報  
 Error 16063 archiving LNO:n to '<db>' (Doc ID 2722180.1)  
+
