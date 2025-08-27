@@ -72,7 +72,8 @@ Clearing online redo logfile 4 +DATAC1/ef/ONLINELOG/group_4.372.1001353523
 SQL> ALTER DATABASE RECOVER MANAGED STANDBY DATABASE DISCONNECT FROM SESSION;
 ```
 3- 本番ノード1からスタンバイにパスワードファイルをコピーします。  
-バージョン12.2はすでにプレミアサポートが終了しているため、できるだけ早くバージョン19cにアップグレードすることをお勧めします。ありがとうございました。  
+バージョン12.2はすでにプレミアサポートが終了しているため、できるだけ早くバージョン19cにアップグレードすることをお勧めします。 
 
 ## 参考情報  
 Standby Database MRP Fails With ORA-46952: Standby Database Format Mismatch For Password (Doc ID 2503352.1)  
+
