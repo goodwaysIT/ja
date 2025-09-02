@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "ORACLE 12c and 19c Coexistence System, DBCA Reports Error"
+title: "Oracle 12cおよび19cの共存システムでDBCAエラー報告"
 excerpt: "現在のシステムは、12cと19cの共存システムです。クラスタは19C、データベースは19cと12cです。ソフトウェアは異なるユーザー配下にあります：19c（ORACLEユーザー）、12c（oracle2ユーザー）。現在、12c環境でDBCAを実行してデータベースを作成する際に、以下のエラーが報告されます：DBT-00007 ユーザーに適切な書き込み権限がありません。"
 date: 2025-08-29 15:00:00 +0800
 categories: [Oracle, Database, RAC]
@@ -8,7 +8,7 @@ tags: [PRVF-7595, PRVG-2043, DBT-00007, rac, oracle]
 image: /assets/images/posts/ORACLE-12c-and-19c-Coexistence-System-DBCA-Reports-Error.jpg
 ---
 
-## 症状  
+## 問題  
 現在のシステムは、12cと19cの共存システムです。クラスタは19C、データベースは19cと12cです。ソフトウェアは異なるユーザー配下にあります：19c（ORACLEユーザー）、12c（oracle2ユーザー）。  
 現在、12c環境でDBCAを実行してデータベースを作成する際に、以下のエラーが報告されます：  
 ```
@@ -90,3 +90,4 @@ chmod -R 775 /u01
 
 ## 参考情報  
 DBCA Database Creation Fails With Error PRCR-1154 Due to Wrong Ownership/Permission (Doc ID 2165706.1)  
+
