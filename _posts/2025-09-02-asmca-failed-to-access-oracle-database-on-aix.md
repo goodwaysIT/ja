@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "ORACLE ASMCAコマンドがAIX 7.2でアクセスに失敗しました"
+title: "ORACLE ASMCAコマンドがAIX 7.2でアクセスに失敗"
 excerpt: "提供された情報に基づき、AIXオペレーティングシステムでasmcaコマンドを実行した際に、未処理の例外エラーメッセージが発生したことを確認しました。この問題はAIX環境に特有であり、BUG 34585151で調査されており、IBM JVMの設定に関連していると考えられています。"
 date: 2025-09-02 15:00:00 +0800
 categories: [Oracle, Database, RAC]
@@ -8,7 +8,7 @@ tags: [error_value=00000000, Can not use asmca, asmca failed to access oracle, r
 image: /assets/images/posts/asmca-failed-to-access-oracle-database-on-aix.jpg
 ---
 
-## 現象  
+## 問題  
 対象バージョン: 19.17.0.0.0, IBM AIX on POWER Systems (64-bit)  
 
 asmcaがアクセスに失敗しました  
@@ -65,3 +65,4 @@ JRE_OPTIONS="${JRE_OPTIONS} -Dsun.java2d.font.DisableAlgorithmicStyles=true -DDI
 
 ## 参考情報  
 BUG 34585151 - AIX64-19.17 : ROOT.SH FAILED ON FIRST NODE, UNHANDLED EXCEPTION, CLSRSC-612: FAILED TO CREATE BACKUP DISK GROUP  
+
